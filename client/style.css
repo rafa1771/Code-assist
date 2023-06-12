@@ -13,19 +13,63 @@ body {
 
 h1 {
   color: aquamarine;
+  font-family: "Satoshi", sans-serif;
+  font-weight: 900;
   justify-content: center;
   text-align: center;
-  line-height: 10vh;
+  line-height: 12vh;
 }
 
 h2 {
   color:aquamarine;
+  font-family: "Satoshi", sans-serif;
+  font-weight: 700;
+  justify-content: center;
+  text-align: center;
 }
 
 
 #intro_container {
   margin: 25vh;
 }
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px;
+  background-color: transparent;
+  z-index: 1;
+}
+
+.logo {
+  margin-top: 0.5rem;
+  width: 3rem;
+  height: auto;
+  object-fit: contain;
+  margin-left: 0.5rem;
+  border-radius: 50%;
+}
+
+.black_btn {
+  padding: 0.5rem 1rem;
+  font-family: "Satoshi", sans-serif;
+  font-weight: 700;
+  font-size: 1rem;
+  letter-spacing: 0.1rem;
+  background-color: #000;
+  color: #fff;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  margin-right: 5px;
+}
+
+
 
 #app {
   width: 100vw;

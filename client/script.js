@@ -5,15 +5,13 @@ const form = document.querySelector('form');
 const chatContainer = document.querySelector('#chat_container');
 const introContainer = document.querySelector('#intro_container');
 const introTextElement = document.querySelector('#intro_text');
+const promptInput = document.querySelector('textarea[name="prompt"]');
 
 const userLanguage = navigator.language;
 
 const messages = {
   en: {
     introText: 'Welcome to CodexGPT, your coding AI!',
-  },
-  fr: {
-    introText: 'Bienvenue à CodexGPT, votre IA de programmation !',
   },
   es: {
     introText: 'Bienvenido a CodexGPT, tu IA de programación!',
@@ -23,10 +21,24 @@ const messages = {
 
 const userLanguageMessages = messages[userLanguage] || messages.en;
 
+const githubBtn = document.getElementById('githubBtn');
+githubBtn.addEventListener('click', () => {
+  window.open('https://github.com/rafa1771?tab=projects');
+});
+
 introTextElement.textContent = userLanguageMessages.introText;
 
 introContainer.style.display = 'block';
 
+const placeholderTexts = {
+  en: 'Ask CodexGPT...',
+  es: 'Pregunta a CodexGPT...',
+  // Add more language placeholder texts as needed
+};
+
+const userLanguagePlaceholder = placeholderTexts[userLanguage] || placeholderTexts.en;
+
+promptInput.placeholder = userLanguagePlaceholder;
 
 let loadInterval;
 
