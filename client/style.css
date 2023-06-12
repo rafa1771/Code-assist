@@ -11,6 +11,22 @@ body {
   background: #343541;
 }
 
+h1 {
+  color: aquamarine;
+  justify-content: center;
+  text-align: center;
+  line-height: 10vh;
+}
+
+h2 {
+  color:aquamarine;
+}
+
+
+#intro_container {
+  margin: 25vh;
+}
+
 #app {
   width: 100vw;
   height: 100vh;

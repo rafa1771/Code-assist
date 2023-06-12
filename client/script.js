@@ -3,6 +3,30 @@ import user from './assets/user.svg';
 
 const form = document.querySelector('form');
 const chatContainer = document.querySelector('#chat_container');
+const introContainer = document.querySelector('#intro_container');
+const introTextElement = document.querySelector('#intro_text');
+
+const userLanguage = navigator.language;
+
+const messages = {
+  en: {
+    introText: 'Welcome to CodexGPT, your coding AI!',
+  },
+  fr: {
+    introText: 'Bienvenue à CodexGPT, votre IA de programmation !',
+  },
+  es: {
+    introText: 'Bienvenido a CodexGPT, tu IA de programación!',
+  },
+  // Add more language messages as needed
+};
+
+const userLanguageMessages = messages[userLanguage] || messages.en;
+
+introTextElement.textContent = userLanguageMessages.introText;
+
+introContainer.style.display = 'block';
+
 
 let loadInterval;
 
@@ -66,6 +90,9 @@ const handleSubmit = async (e) => {
   chatContainer.innerHTML += chatStripe(false, data.get('prompt'));
 
   form.reset();
+
+  // Hide the introductory field
+  introContainer.style.display = 'none';
 
   //bot's chatstripe
   const uniqueId = generateUniqueId();
