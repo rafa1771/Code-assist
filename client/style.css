@@ -53,6 +53,16 @@ h2 {
   object-fit: contain;
   margin-left: 0.5rem;
   border-radius: 50%;
+  transition: transform 0.35s ease-in-out, border-radius 0.35s ease-in-out, margin-top 0.35s ease-in-out, margin-left 0.35s ease-in-out;
+
+}
+
+.logo:hover {
+  margin-top: 2.5rem;
+  margin-left: 2.5rem;
+  transform: scale(2.5) rotate(-5deg);
+  box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.2);
+  border-radius: 50%;
 }
 
 .black_btn {

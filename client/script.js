@@ -16,6 +16,12 @@ const messages = {
   es: {
     introText: 'Bienvenido a CodexGPT, tu IA de programación!',
   },
+  fr: {
+    introText: 'Bienvenue sur CodexGPT, votre IA de programmation !',
+  },
+  it: {
+    introText: 'Benvenuto in CodexGPT, la tua IA di programmazione!',
+  },
   // Add more language messages as needed
 };
 
@@ -33,6 +39,8 @@ introContainer.style.display = 'block';
 const placeholderTexts = {
   en: 'Ask CodexGPT...',
   es: 'Pregunta a CodexGPT...',
+  fr: 'Demandez à CodexGPT...',
+  it: 'Chiedi a CodexGPT...',
   // Add more language placeholder texts as needed
 };
 
