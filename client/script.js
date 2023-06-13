@@ -29,7 +29,7 @@ const userLanguageMessages = messages[userLanguage] || messages.en;
 
 const githubBtn = document.getElementById('githubBtn');
 githubBtn.addEventListener('click', () => {
-  window.open('https://github.com/rafa1771?tab=projects');
+  window.open('https://github.com/rafa1771');
 });
 
 introTextElement.textContent = userLanguageMessages.introText;
