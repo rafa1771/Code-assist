@@ -30,6 +30,8 @@ h2 {
   color: aquamarine;
   opacity: 70%;
   margin-bottom: 10px;
+  justify-content: center;
+  text-align: center;
 }
 
 #intro_container {
