@@ -1,4 +1,5 @@
 import bot from './assets/bot.svg';
+import codelobo from './assets/codelobo.svg';
 import user from './assets/user.svg';
 
 const form = document.querySelector('form');
@@ -6,21 +7,22 @@ const chatContainer = document.querySelector('#chat_container');
 const introContainer = document.querySelector('#intro_container');
 const introTextElement = document.querySelector('#intro_text');
 const promptInput = document.querySelector('textarea[name="prompt"]');
+const disclaimerElement = document.querySelector('.disclaimer');
 
 const userLanguage = navigator.language;
 
 const messages = {
   en: {
-    introText: 'Welcome to CodexGPT, your coding AI!',
+    introText: 'Welcome to CodeLoboGPT, your coding AI!',
   },
   es: {
-    introText: 'Bienvenido a CodexGPT, tu IA de programación!',
+    introText: 'Bienvenido a CodeLoboGPT, tu IA de programación!',
   },
   fr: {
-    introText: 'Bienvenue sur CodexGPT, votre IA de programmation !',
+    introText: 'Bienvenue sur CodeLoboGPT, votre IA de programmation !',
   },
   it: {
-    introText: 'Benvenuto in CodexGPT, la tua IA di programmazione!',
+    introText: 'Benvenuto in CodeLoboGPT, la tua IA di programmazione!',
   },
   // Add more language messages as needed
 };
@@ -32,21 +34,39 @@ githubBtn.addEventListener('click', () => {
   window.open('https://github.com/rafa1771');
 });
 
+
 introTextElement.textContent = userLanguageMessages.introText;
 
 introContainer.style.display = 'block';
 
+
+// Multilingual placeholder
+
 const placeholderTexts = {
-  en: 'Ask CodexGPT...',
-  es: 'Pregunta a CodexGPT...',
-  fr: 'Demandez à CodexGPT...',
-  it: 'Chiedi a CodexGPT...',
+  en: 'Ask CodeLoboGPT...',
+  es: 'Pregunta a CodeLoboGPT...',
+  fr: 'Demandez à CodeLoboGPT...',
+  it: 'Chiedi a CodeLoboGPT...',
   // Add more language placeholder texts as needed
 };
 
 const userLanguagePlaceholder = placeholderTexts[userLanguage] || placeholderTexts.en;
 
 promptInput.placeholder = userLanguagePlaceholder;
+
+//Multilingual disclaimer texts
+
+const disclaimerTexts = {
+  en: 'CodeLoboGPT by Vizt Nivlir. May produce inaccurate or outdated information, just saying.',
+  es: 'CodeLoboGPT por Vizt Nivlir. Podría dar información inexacta o desactualizada ¡Ojo al dato!',
+  fr: 'CodeLoboGPT par Vizt Nivlir. Peut produire des informations inexactes ou obsolètes, juste pour info.',
+  it: 'CodeLoboGPT di Vizt Nivlir. Potrebbe fornire informazioni inaccurate o obsolete, giusto per saperlo.',
+  // Add more language disclaimer texts as needed
+};
+
+const userLanguageDisclaimer = disclaimerTexts[userLanguage] || disclaimerTexts.en;
+
+disclaimerElement.textContent = userLanguageDisclaimer;
 
 let loadInterval;
 
@@ -90,8 +110,8 @@ function chatStripe (isAi, value, uniqueId) {
         <div class="chat">
           <div class="profile">
             <img
-              src="${isAi ? bot : user}"
-              alt="${isAi ? 'bot' : 'user'}"
+              src="${isAi ? codelobo : user}"
+              alt="${isAi ? 'codelobo' : 'user'}"
             />
           </div>
           <div class="message" id=${uniqueId}>${value}</div>
